@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mariane Freitas · Nail Designer</title>
+<meta name="description" content="Alongamento, manutenção e esmaltação em gel. Agende seu horário pelo WhatsApp.">
+<meta property="og:title" content="Mariane Freitas · Nail Designer">
+<meta property="og:description" content="Alongamento, manutenção e esmaltação em gel. Agende seu horário pelo WhatsApp.">
+<meta property="og:type" content="website">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💅</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,400;6..96,500&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --porcelana:#F7F3EF;
+  --leite:#FFFFFF;
+  --nude:#E7D8CB;
+  --champagne:#B99A6B;
+  --argila:#8A7767;
+  --cacau:#2B2320;
+
+  --display:'Bodoni Moda', Georgia, serif;
+  --corpo:'Jost', system-ui, sans-serif;
+
+  --max:1140px;
+  --gutter:clamp(20px,5vw,48px);
+  --secao:clamp(72px,10vw,132px);
+  --tip:200px 200px 14px 14px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--porcelana);
+  color:var(--cacau);
+  font-family:var(--corpo);
+  font-weight:300;
+  font-size:clamp(15px,1.05vw,17px);
+  line-height:1.7;
+  -webkit-font-smoothing:antialiased;
+}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+.secao{padding-block:var(--secao)}
+
+/* ---------- tipografia ---------- */
+.eyebrow{
+  font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--argila);font-weight:400;
+}
+h1,h2,h3{font-family:var(--display);font-weight:400;line-height:1.08}
+h1{font-size:clamp(3rem,10vw,6.4rem);letter-spacing:-.02em}
+h2{font-size:clamp(2rem,4.6vw,3.2rem)}
+h3{font-size:1.25rem}
+.lead{max-width:44ch;color:var(--argila);font-size:1.05rem}
+.titulo-bloco{margin-bottom:clamp(36px,5vw,60px)}
+.titulo-bloco .eyebrow{display:block;margin-bottom:14px}
+
+/* ---------- botões ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:15px 30px;border-radius:999px;border:1px solid transparent;
+  font-family:var(--corpo);font-size:.82rem;font-weight:400;
+  letter-spacing:.16em;text-transform:uppercase;text-decoration:none;
+  cursor:pointer;transition:background .3s,color .3s,border-color .3s,transform .3s;
+}
+.btn svg{width:16px;height:16px;flex:none}
+.btn-primario{background:var(--cacau);color:var(--porcelana)}
+.btn-primario:hover{background:var(--champagne);transform:translateY(-2px)}
+.btn-linha{border-color:var(--nude);color:var(--cacau)}
+.btn-linha:hover{border-color:var(--champagne);color:var(--champagne)}
+:focus-visible{outline:2px solid var(--champagne);outline-offset:3px}
+
+/* ---------- topo ---------- */
+.topo{
+  position:sticky;top:0;z-index:40;
+  background:color-mix(in srgb, var(--porcelana) 88%, transparent);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid transparent;transition:border-color .3s;
+}
+.topo.fixo{border-bottom-color:var(--nude)}
+.topo .wrap{display:flex;align-items:center;justify-content:space-between;height:74px}
+.marca{font-family:var(--display);font-size:1.15rem;letter-spacing:.02em;text-decoration:none}
+.menu{display:flex;gap:34px;list-style:none}
+.menu a{
+  text-decoration:none;font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--argila);transition:color .3s;
+}
+.menu a:hover{color:var(--cacau)}
+@media(max-width:820px){.menu{display:none}}
+
+/* ---------- hero ---------- */
+.hero .wrap{
+  display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(32px,6vw,80px);
+  align-items:center;padding-block:clamp(48px,8vw,96px);
+}
+.hero-texto .eyebrow{margin-bottom:22px}
+.hero-texto h1{margin-bottom:26px}
+.hero-texto h1 em{font-style:italic;color:var(--champagne)}
+.hero-acoes{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px}
+
+.hero-arte{position:relative;aspect-ratio:4/5}
+.hero-arte .moldura{
+  position:absolute;inset:22px -22px -22px 22px;
+  border:1px solid var(--champagne);border-radius:var(--tip);
+}
+.hero-arte .foto{
+  position:relative;height:100%;border-radius:var(--tip);overflow:hidden;
+  background:linear-gradient(150deg,#EFE3D8,#D8C2AF 55%,#C8AE96);
+}
+@media(max-width:820px){
+  .hero .wrap{grid-template-columns:1fr}
+  .hero-arte{max-width:340px;margin-inline:auto;order:-1}
+}
+
+/* ---------- serviços ---------- */
+.servicos{background:var(--leite)}
+.lista-servicos{border-top:1px solid var(--nude)}
+.servico{
+  display:grid;grid-template-columns:1fr auto;gap:8px 28px;align-items:baseline;
+  padding:26px 0;border-bottom:1px solid var(--nude);
+  text-decoration:none;transition:padding-inline .35s;
+}
+.servico:hover{padding-inline:14px}
+.servico:hover .servico-nome{color:var(--champagne)}
+.servico-nome{font-family:var(--display);font-size:1.4rem;transition:color .3s}
+.servico-desc{grid-column:1;color:var(--argila);font-size:.92rem;max-width:52ch}
+.servico-preco{
+  font-size:1.05rem;letter-spacing:.04em;white-space:nowrap;color:var(--cacau);
+}
+.servico-preco small{display:block;font-size:.68rem;letter-spacing:.2em;text-transform:uppercase;color:var(--argila)}
+.nota-servicos{margin-top:26px;font-size:.85rem;color:var(--argila)}
+
+/* ---------- mostruário ---------- */
+.mostruario{
+  display:grid;grid-template-columns:repeat(6,1fr);
+  gap:clamp(10px,1.6vw,20px);align-items:end;
+}
+.tip{
+  position:relative;aspect-ratio:2/3;border-radius:var(--tip);overflow:hidden;
+  background:linear-gradient(160deg,#F0E5DB,#DCC8B6);
+  transition:transform .45s cubic-bezier(.2,.7,.3,1);
+}
+.tip:nth-child(odd){transform:translateY(18px)}
+.tip:hover{transform:translateY(-6px)}
+.tip:nth-child(odd):hover{transform:translateY(10px)}
+.tip::after{
+  content:attr(data-legenda);
+  position:absolute;left:0;right:0;bottom:0;padding:26px 12px 12px;
+  font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;text-align:center;
+  color:#fff;background:linear-gradient(to top,rgba(43,35,32,.7),transparent);
+  opacity:0;transition:opacity .3s;
+}
+.tip:hover::after{opacity:1}
+@media(max-width:900px){.mostruario{grid-template-columns:repeat(3,1fr)}}
+@media(max-width:480px){.mostruario{grid-template-columns:repeat(2,1fr)}}
+
+/* ---------- sobre ---------- */
+.sobre{background:var(--leite)}
+.sobre .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(32px,6vw,80px);align-items:center}
+.sobre-foto{aspect-ratio:4/5;border-radius:var(--tip);overflow:hidden;background:linear-gradient(160deg,#EBDDD1,#D3BCA8)}
+.sobre p+p{margin-top:18px}
+.assinatura{
+  font-family:var(--display);font-style:italic;font-size:1.6rem;
+  color:var(--champagne);margin-top:28px;
+}
+@media(max-width:820px){.sobre .wrap{grid-template-columns:1fr}.sobre-foto{max-width:300px}}
+
+/* ---------- depoimentos ---------- */
+.depoimentos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2.4vw,28px)}
+.depoimento{
+  background:var(--leite);border:1px solid var(--nude);border-radius:18px;
+  padding:clamp(24px,3vw,34px);display:flex;flex-direction:column;gap:18px;
+}
+.depoimento p{font-family:var(--display);font-size:1.1rem;line-height:1.55}
+.depoimento footer{font-size:.72rem;letter-spacing:.18em;text-transform:uppercase;color:var(--argila);margin-top:auto}
+.estrelas{color:var(--champagne);letter-spacing:.22em;font-size:.8rem}
+@media(max-width:820px){.depoimentos-grid{grid-template-columns:1fr}}
+
+/* ---------- chamada final ---------- */
+.chamada{background:var(--cacau);color:var(--porcelana);text-align:center}
+.chamada h2{color:var(--porcelana)}
+.chamada .eyebrow{color:var(--champagne)}
+.chamada .lead{margin:20px auto 34px;color:color-mix(in srgb,var(--porcelana) 72%,transparent)}
+.chamada .btn-primario{background:var(--porcelana);color:var(--cacau)}
+.chamada .btn-primario:hover{background:var(--champagne);color:var(--cacau)}
+
+/* ---------- rodapé ---------- */
+.rodape{padding-block:clamp(48px,7vw,80px);border-top:1px solid var(--nude)}
+.rodape .wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:36px}
+.rodape h3{font-size:.72rem;font-family:var(--corpo);letter-spacing:.2em;text-transform:uppercase;color:var(--argila);margin-bottom:14px}
+.rodape a{text-decoration:none;transition:color .3s}
+.rodape a:hover{color:var(--champagne)}
+.creditos{
+  margin-top:48px;padding-top:24px;border-top:1px solid var(--nude);
+  font-size:.75rem;color:var(--argila);display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;
+}
+@media(max-width:820px){.rodape .wrap{grid-template-columns:1fr}}
+
+/* ---------- botão flutuante ---------- */
+.flutuante{
+  position:fixed;right:20px;bottom:20px;z-index:50;
+  display:flex;align-items:center;gap:10px;
+  padding:14px 22px;border-radius:999px;text-decoration:none;
+  background:var(--cacau);color:var(--porcelana);
+  font-size:.75rem;letter-spacing:.16em;text-transform:uppercase;
+  box-shadow:0 12px 30px rgba(43,35,32,.22);
+  transition:background .3s,transform .3s;
+}
+.flutuante:hover{background:var(--champagne);transform:translateY(-2px)}
+.flutuante svg{width:18px;height:18px}
+@media(max-width:520px){.flutuante span{display:none}.flutuante{padding:16px;right:16px;bottom:16px}}
+
+/* ---------- animação de entrada ---------- */
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s ease}
+.reveal.visivel{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto}
+  .reveal{opacity:1;transform:none}
+  .tip:nth-child(odd){transform:translateY(18px)}
+}
+</style>
+</head>
+<body>
+
+<header class="topo" id="topo">
+  <div class="wrap">
+    <a class="marca" href="#topo">Mariane Freitas</a>
+    <nav>
+      <ul class="menu">
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#trabalhos">Trabalhos</a></li>
+        <li><a href="#sobre">Sobre</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+      </ul>
+    </nav>
+    <a class="btn btn-linha" data-wa data-msg="agendar">Agendar</a>
+  </div>
+</header>
+
+<main>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="wrap">
+      <div class="hero-texto reveal">
+        <span class="eyebrow">Nail designer · Belo Horizonte</span>
+        <h1>Unhas <em>feitas</em> para durar.</h1>
+        <p class="lead">Alongamento, manutenção e esmaltação em gel com acabamento impecável e um atendimento sem pressa, uma cliente por vez.</p>
+        <div class="hero-acoes">
+          <a class="btn btn-primario" data-wa data-msg="agendar">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.4-.53.08-1.17.11-1.89-.12-.44-.14-1-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.07.91 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2.01.96.3.15.49.22.56.35.07.12.07.72-.18 1.41z"/></svg>
+            Agendar pelo WhatsApp
+          </a>
+          <a class="btn btn-linha" href="#trabalhos">Ver trabalhos</a>
+        </div>
+      </div>
+      <div class="hero-arte reveal">
+        <div class="moldura" aria-hidden="true"></div>
+        <div class="foto">
+          <img src="img/capa.jpg" alt="Trabalho de unhas em gel" onerror="this.remove()">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVIÇOS ===== -->
+  <section class="secao servicos" id="servicos">
+    <div class="wrap">
+      <div class="titulo-bloco reveal">
+        <span class="eyebrow">Tabela de serviços</span>
+        <h2>O que eu faço</h2>
+      </div>
+
+      <div class="lista-servicos reveal">
+
+        <a class="servico" data-wa data-msg="Alongamento de unhas">
+          <span class="servico-nome">Alongamento de unhas</span>
+          <span class="servico-preco">R$ 160<small>2h</small></span>
+          <span class="servico-desc">Extensão do comprimento com acabamento em gel e formato à sua escolha.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Manutenção de alongamento">
+          <span class="servico-nome">Manutenção de alongamento</span>
+          <span class="servico-preco">R$ 130<small>1h30</small></span>
+          <span class="servico-desc">Retoque do alongamento já existente. Recomendada a cada 21 dias.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Manutenção + pé">
+          <span class="servico-nome">Manutenção + pé</span>
+          <span class="servico-preco">R$ 150<small>2h</small></span>
+          <span class="servico-desc">Manutenção do alongamento junto com a esmaltação dos pés.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Banho de gel">
+          <span class="servico-nome">Banho de gel</span>
+          <span class="servico-preco">R$ 130<small>1h30</small></span>
+          <span class="servico-desc">Camada de gel sobre a unha natural, sem alongar o comprimento.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Blindagem">
+          <span class="servico-nome">Blindagem</span>
+          <span class="servico-preco">R$ 120<small>1h30</small></span>
+          <span class="servico-desc">Reforço para unhas fracas ou em recuperação.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Esmaltação em gel">
+          <span class="servico-nome">Esmaltação em gel</span>
+          <span class="servico-preco">R$ 120<small>1h30</small></span>
+          <span class="servico-desc">Camada fina de gel que reforça a unha natural, finalizada com esmalte em gel. Dura cerca de 15 dias.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Pé e mão">
+          <span class="servico-nome">Pé e mão</span>
+          <span class="servico-preco">R$ 65<small>1h30</small></span>
+          <span class="servico-desc">Esmaltação tradicional das mãos e dos pés na mesma sessão.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Pé ou mão">
+          <span class="servico-nome">Pé ou mão</span>
+          <span class="servico-preco">R$ 35<small>1h</small></span>
+          <span class="servico-desc">Esmaltação tradicional das mãos ou dos pés.</span>
+        </a>
+
+        <a class="servico" data-wa data-msg="Sobrancelha">
+          <span class="servico-nome">Sobrancelha</span>
+          <span class="servico-preco">R$ 50<small>30min</small></span>
+          <span class="servico-desc">Design de sobrancelha, pode ser combinado com qualquer serviço.</span>
+        </a>
+      </div>
+      <p class="nota-servicos reveal">Nail art e pedrarias têm valor à parte, combinado antes do atendimento. Todo agendamento tem sinal de 50%, descontado do valor no dia — com estorno em cancelamentos avisados com 24h de antecedência. Toque em um serviço para abrir o WhatsApp com a mensagem pronta.</p>
+    </div>
+  </section>
+
+  <!-- ===== TRABALHOS ===== -->
+  <section class="secao" id="trabalhos">
+    <div class="wrap">
+      <div class="titulo-bloco reveal">
+        <span class="eyebrow">Mostruário</span>
+        <h2>Trabalhos recentes</h2>
+        <p class="lead" style="margin-top:16px">Cada tip é um atendimento real.</p>
+      </div>
+
+      <div class="mostruario reveal">
+        <figure class="tip" data-legenda="Nude"><img src="img/trabalho-1.jpg" alt="Unhas em nude" onerror="this.remove()"></figure>
+        <figure class="tip" data-legenda="Francesinha"><img src="img/trabalho-2.jpg" alt="Unhas em francesinha" onerror="this.remove()"></figure>
+        <figure class="tip" data-legenda="Vermelha"><img src="img/trabalho-3.jpg" alt="Unhas vermehas" onerror="this.remove()"></figure>
+        <figure class="tip" data-legenda="Cromada"><img src="img/trabalho-4.jpg" alt="Unhas cromadas" onerror="this.remove()"></figure>
+        <figure class="tip" data-legenda="Coloridas"><img src="img/trabalho-5.jpg" alt="Unhas Coloridas" onerror="this.remove()"></figure>
+        <figure class="tip" data-legenda="Pretas"><img src="img/trabalho-6.jpg" alt="Unhas pretas" onerror="this.remove()"></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SOBRE ===== -->
+  <section class="secao sobre" id="sobre">
+    <div class="wrap">
+      <div class="sobre-foto reveal">
+        <img src="img/mariane.jpg" alt="Mariane Freitas" onerror="this.remove()">
+      </div>
+      <div class="reveal">
+        <span class="eyebrow">Sobre mim</span>
+        <h2 style="margin:14px 0 22px">Prazer, Mariane</h2>
+        <p>Sou nail designer e trabalho com alongamento e esmaltação em gel. Comecei fazendo as unhas das amigas e hoje atendo com hora marcada, uma cliente por vez, para que ninguém precise esperar.</p>
+        <p>Todo material é esterilizado e boa parte é de uso individual. O formato, o tamanho e a cor a gente decide junto — meu compromisso é que a unha fique confortável no seu dia a dia e resistente até a próxima manutenção.</p>
+        <p class="assinatura">Mariane Freitas</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== DEPOIMENTOS ===== -->
+  <section class="secao" id="depoimentos">
+    <div class="wrap">
+      <div class="titulo-bloco reveal">
+        <span class="eyebrow">Quem já sentou na cadeira</span>
+        <h2>Depoimentos</h2>
+      </div>
+      <div class="depoimentos-grid reveal">
+        <article class="depoimento">
+          <span class="estrelas" aria-label="5 de 5">★★★★★</span>
+          <p>“Apaixonada com a unha! Todos no meu trabalho elogiaram. Impecável, natural — e seu atendimento, perfeito.”</p>
+          <footer>Thaís Lopes</footer>
+        </article>
+        <article class="depoimento">
+          <span class="estrelas" aria-label="5 de 5">★★★★★</span>
+          <p>“Como médica, o uso frequente de luva estéril sempre fez minhas unhas descascarem rápido. Com o gel da Mari, elas ficam perfeitas por 15 dias.”</p>
+          <footer>Joseane Alecrim</footer>
+        </article>
+        <article class="depoimento">
+          <span class="estrelas" aria-label="5 de 5">★★★★★</span>
+          <p>“Ambiente tranquilo, horário respeitado e acabamento perfeito. Virei cliente fixa.”</p>
+          <footer>Nome da cliente</footer>
+        </article>
+      </div>
+      <p class="nota-servicos reveal" style="margin-top:28px;text-align:center">
+        <a href="https://g.page/r/CSKElj-2-pZTEAE" target="_blank" rel="noopener" style="color:var(--champagne)">Ver todas as avaliações no Google</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== CHAMADA FINAL ===== -->
+  <section class="secao chamada">
+    <div class="wrap">
+      <span class="eyebrow">Agenda aberta</span>
+      <h2 style="margin-top:14px">Vamos marcar o seu horário?</h2>
+      <p class="lead">Me chama no WhatsApp com o serviço que você quer. Eu respondo com os horários livres da semana.</p>
+      <a class="btn btn-primario" data-wa data-msg="agendar">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.4-.53.08-1.17.11-1.89-.12-.44-.14-1-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.07.91 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2.01.96.3.15.49.22.56.35.07.12.07.72-.18 1.41z"/></svg>
+        Chamar no WhatsApp
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="rodape">
+  <div class="wrap">
+    <div>
+      <h3>Atendimento</h3>
+      <p><a href="https://www.google.com/maps/search/?api=1&query=Av.+Sebasti%C3%A3o+de+Brito%2C+598%2C+Dona+Clara%2C+Belo+Horizonte" target="_blank" rel="noopener">Av. Sebastião de Brito, 598 — Sala 101<br>Dona Clara, Belo Horizonte — MG</a></p>
+    </div>
+    <div>
+      <h3>Horários</h3>
+      <p>Segunda a sábado · 9h às 17h<br>Domingo · fechado</p>
+    </div>
+    <div>
+      <h3>Contato</h3>
+      <p>
+        <a data-wa data-msg="agendar">WhatsApp</a><br>
+        <a href="https://instagram.com/marianefreitas.unhas" target="_blank" rel="noopener">@marianefreitas.unhas</a>
+      </p>
+    </div>
+  </div>
+  <div class="wrap creditos">
+    <span>© <span id="ano"></span> Mariane Freitas · Nail Designer</span>
+    <span>Dona Clara, Belo Horizonte — MG</span>
+  </div>
+</footer>
+
+<a class="flutuante" data-wa data-msg="agendar" aria-label="Agendar pelo WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.46 1.32 4.96L2 22l5.25-1.38a9.9 9.9 0 004.79 1.22h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.82 9.82 0 0012.04 2zm5.8 14.13c-.25.69-1.44 1.32-1.99 1.4-.53.08-1.17.11-1.89-.12-.44-.14-1-.32-1.71-.63-3.01-1.3-4.97-4.33-5.12-4.53-.15-.2-1.22-1.62-1.22-3.09 0-1.47.77-2.19 1.04-2.49.27-.3.59-.37.79-.37.2 0 .39 0 .57.01.18.01.42-.07.66.5.25.6.84 2.07.91 2.22.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.61.17.3.76 1.25 1.63 2.03 1.12 1 2.06 1.31 2.36 1.46.3.15.47.12.64-.07.17-.2.74-.86.94-1.16.2-.3.39-.25.66-.15.27.1 1.71.81 2.01.96.3.15.49.22.56.35.07.12.07.72-.18 1.41z"/></svg>
+  <span>Agendar</span>
+</a>
+
+<script>
+/* ==========================================================
+   CONFIGURAÇÃO — altere apenas este bloco
+   ========================================================== */
+const CONFIG = {
+  // 55 + DDD + número, só dígitos — número do perfil Google do estúdio
+  whatsapp: "5531996555137",
+
+  // mensagem usada nos botões gerais (data-msg="agendar")
+  mensagemPadrao: "Oi, Mariane! Vim pelo site e queria agendar um horário. Pode me passar os dias disponíveis?",
+
+  // modelo usado quando o botão indica um serviço específico
+  mensagemServico: (servico) =>
+    `Oi, Mariane! Vim pelo site e queria agendar: ${servico}. Quais horários você tem disponíveis?`
+};
+/* ========================================================== */
+
+(function () {
+  const link = (texto) =>
+    `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(texto)}`;
+
+  document.querySelectorAll("[data-wa]").forEach((el) => {
+    const msg = el.dataset.msg;
+    const texto = !msg || msg === "agendar"
+      ? CONFIG.mensagemPadrao
+      : CONFIG.mensagemServico(msg);
+    el.setAttribute("href", link(texto));
+    el.setAttribute("target", "_blank");
+    el.setAttribute("rel", "noopener");
+  });
+
+  document.getElementById("ano").textContent = new Date().getFullYear();
+
+  const topo = document.getElementById("topo");
+  const onScroll = () => topo.classList.toggle("fixo", window.scrollY > 8);
+  onScroll();
+  addEventListener("scroll", onScroll, { passive: true });
+
+  const alvos = document.querySelectorAll(".reveal");
+  if (!matchMedia("(prefers-reduced-motion: reduce)").matches && "IntersectionObserver" in window) {
+    const obs = new IntersectionObserver((entradas) => {
+      entradas.forEach((e) => {
+        if (e.isIntersecting) { e.target.classList.add("visivel"); obs.unobserve(e.target); }
+      });
+    }, { threshold: 0.12, rootMargin: "0px 0px -40px" });
+    alvos.forEach((a) => obs.observe(a));
+  } else {
+    alvos.forEach((a) => a.classList.add("visivel"));
+  }
+})();
+</script>
+
+</body>
+</html>
